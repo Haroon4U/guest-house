@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Slide Bar</title>
+		<meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" media="screen" href="slide.css" />
+	    <link rel="stylesheet" href="css/bootstrap.min.css">
+	            <!--link connect to bootstrap & javascript  -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>	
+
+</head>
+<body>
+	<div class="row">
+		<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+			<div class="menu">
+				<ul class=" sidenav list-group list-group-flush">
+					<li>
+				        <div class="user-view">
+				            <div class="background">
+				                <img src="img/pexels.jpg">
+				            </div>
+				                <a href="#user">
+				                   <img class="circle" src="img/carousel2.jpg">
+				                </a>
+				                <a href="#name">
+				                   <span class="white-text name">John Doe</span>
+				                </a>
+				                <a href="#email">
+				                   <span class="white-text email">jdandturk@gmail.com</span>
+				                </a>
+				        </div>
+
+				    </li>
+				    <div class="">
+				    	<input id="myInput" placeholder="search.." type="text" name="">
+				    </div>
+				    <div id="accordion">
+	                    <div class="list-group" id="myTable">
+	                    	<!-- start link -->
+	                    	<li class="item">
+	                    		<a href="#" class="list-group-item list-group-item-action btn1" data-toggle="collapse" data-target="#demo1">Guest info</a> 
+	                    	</li>
+		    				<li class="item" id="form">
+								<a href="#form" class="list-group-item list-group-item-action btn1" data-toggle="collapse" data-target="#demo2">Form</a>
+								<div class="smenu">
+									<div id="demo2" class="collapse show" 
+									data-parent="#accordion">									
+										<a href="#">Customer Form</a>
+										<a href="#">New Register</a>
+								    </div>
+								</div>
+							</li>
+
+							<li class="item" id="filter">
+								<a href="#filter" class="list-group-item list-group-item-action btn1" data-toggle="collapse" data-target="#demo3">Filter</a>
+								<div class="smenu">
+									<div id="demo3" class="collapse show"
+									 data-parent="#accordion">								
+										<a href="#">Referance</a>
+										<a href="#">Summary</a>
+								    </div>
+								</div>
+							</li>
+							<li class="item">
+								<a href="#" class="list-group-item list-group-item-action btn1" data-toggle="collapse" data-target="#demo4">All data</a> 
+							</li>
+							<li class="item" id="checking">
+								<a href="#checking" class="list-group-item list-group-item-action btn1" data-toggle="collapse" data-target="#demo5">Checking</a>
+								<div class="smenu">									
+									<div id="demo5" class="collapse show"
+									 data-parent="#accordion">
+										<a href="#">Proforma Checking hotel</a>
+										<a href="#">Occupancy</a>
+								    </div>
+								</div>
+							</li>
+							<!-- include more add link -->
+
+	                        <!-- End link -->
+	                    </div>				    	
+				    </div>
+		
+				</ul>											
+			</div>
+		</div>
+		<div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+		  <h2>Responsive Sidebar Example</h2>
+		  <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
+		  <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
+		  <h3>Resize the browser window to see the effect.</h3>
+		</div>
+	</div>
+</body>
+</htm>
+        <script>
+            $(document).ready(function(){
+            	$('.collapse').collapse()
+                     });
+            $(document).ready(function(){
+
+            $("#myInput").on("keyup", function() {
+             var value = $(this).val().toLowerCase();
+               $("#myTable li").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                 });
+                   });
+                     });
+
+        </script>
